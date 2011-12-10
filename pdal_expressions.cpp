@@ -41,7 +41,9 @@ struct pdal_grammar : qi::grammar<Iterator, std::string(), qi::ascii::space_type
         divides_ = char_('/') >> factor;
 
         number = char_("0-9") >> *char_("0-9"); // TODO: textual int_ replacement, use int_ and doble_ once semantic evaluation is added
-        field = name | guid;
+        field = name | guid; // TODO: Add support for URN-prefixed GUIDs with have namespace identifier  urn:uuid:
+                             //       or even { here Base64-based text of GUID  }
+
         name = char_("a-zA-Z_") >> *char_("a-zA-Z_0-9");
         guid = char_('{') >> guid_data >> char_('}');
         guid_data = guid_data1 >> guid_delim >> guid_data2 >> guid_delim >> guid_data3 >> guid_delim >> guid_data4;

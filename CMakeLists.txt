@@ -14,6 +14,7 @@ if(MSVC)
   add_definitions(-D_SCL_SECURE_NO_DEPRECATE)
 endif()
 
+add_executable(simple_workshop simple_workshop.cpp)
 add_executable(guid_parser guid_parser.cpp)
 add_executable(pdal_expressions pdal_expressions.cpp)
 add_executable(calc_utree calc_utree.cpp)

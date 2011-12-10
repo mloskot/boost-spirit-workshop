@@ -13,8 +13,6 @@
 #include <iostream>
 #include <string>
 
-#include "spirit_simple_trace.hpp"
-
 namespace qi = boost::spirit::qi;
 
 template <typename Iterator>
